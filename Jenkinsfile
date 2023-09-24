@@ -1,7 +1,7 @@
 pipeline {
           
 	 agent {
-                  label "aj-salve"
+                  label "aj-slave"
 	       } 
 	  
 	    stages {
@@ -39,7 +39,7 @@ pipeline {
                         steps {
 			       script {
                                      retry (5) {
-                                          sh 'curl http://:8080/java-web-app/ | grep -i -E "sr|aj|india"'
+                                          sh 'curl http://172.31.9.90:8080/java-web-app/ | grep -i -E "sr|aj|india"'
 				     }
 			       }
                             
