@@ -18,7 +18,7 @@ pipeline {
 		   stage ("Create Docerfile") {
                         steps {
                             sh 'sudo docker build -t new-java-app:$BUILD_TAG .'
-			    sh 'sudo docker tag new-java-app ajaydevop/new-java-app:$BUILD_TAG'
+			    sh 'sudo docker tag new-java-app:$BUILD_TAG ajaydevop/new-java-app:$BUILD_TAG'
 			}
 		   }
 		   stage ("Push the docker Image") {
