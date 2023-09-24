@@ -36,16 +36,6 @@ pipeline {
 			    sh 'sudo docker run -dit --name web -p 8080:8080 ajaydevop/new-java-app:$BUILD_TAG'
 			}
 		   }
-		   stage ("show website") {
-                        steps {
-			       script {
-                                     retry (6) {
-                                          sh 'curl http://172.31.9.90:8080/java-web-app/ | grep -i -E "india|aj"'
-				     }
-			       }
-                            
-			}
-		   }
 		   stage ("Approval by User") {
                         steps {
                                input 'please confirm the massage'
