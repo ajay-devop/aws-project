@@ -39,7 +39,7 @@ pipeline {
 		   stage ("show website") {
                         steps {
 			       script {
-                                     retry (5) {
+                                     retry (6) {
                                           sh 'curl http://172.31.9.90:8080/java-web-app/ | grep -i -E "india|aj"'
 				     }
 			       }
