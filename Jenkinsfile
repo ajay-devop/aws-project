@@ -32,7 +32,8 @@ pipeline {
 		   }
 		   stage ("Create docker container") {
                         steps {
-                            sh 'sudo docker run -dit --name web -p 8080:8080 ajaydevop/new-java-app:$BUILD_TAG'
+                            sh 'sudo docke rm -f $(docker ps -a -q)'
+			    sh 'sudo docker run -dit --name web -p 8080:8080 ajaydevop/new-java-app:$BUILD_TAG'
 			}
 		   }
 		   stage ("show website") {
